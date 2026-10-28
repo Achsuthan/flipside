@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="classic">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flipside – Privacy & Terms</title>
+    <meta name="description" content="Privacy Policy and Terms & Conditions for Flipside, the cassette deck for your iPhone." />
+    <meta name="theme-color" content="#B9BBBE" />
+    <link rel="icon" type="image/png" href="icon.png" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
+    <style>
+      /* Themes: the same palettes as the app (Shared/Palette.swift) */
+      :root,
+      [data-theme="classic"] {
+        --ground: #e7e3db; --paper: #f6f3ee; --line: #d3ccbf; --well: #e4dfd4; --card: #ffffff;
+        --ink: #2a2724; --muted: #5f584e; --accent: #e8641c; --link: #8f3a0c;
+        --lcd-glass: #20301f; --lcd-text: #b9f28a;
+        --body-0: #d9dadc; --body-1: #b9bbbe; --body-2: #a6a8ab; --body-ink: #3a3a3d; --body-off: #6e7074;
+        --panel-0: #2f3034; --panel-1: #1c1d20; --panel-ink: #f3f3f3; --panel-muted: #a8a9ad;
+        --trim: #8a8c90; --key-face: #e9e9eb; --key-shadow: #77797d; --key-ink: #2a2a2d;
+        color-scheme: light;
+      }
+      [data-theme="midnight"] {
+        --ground: #121315; --paper: #1c1d20; --line: #34353a; --well: #26272b; --card: #26272b;
+        --ink: #eeebe6; --muted: #a29d95; --accent: #6e8bff; --link: #8ea5ff;
+        --lcd-glass: #0f1626; --lcd-text: #8cc8ff;
+        --body-0: #3a3b40; --body-1: #2c2d31; --body-2: #232428; --body-ink: #d8d8dc; --body-off: #55575c;
+        --panel-0: #1a1b1e; --panel-1: #0e0f11; --panel-ink: #eeeef0; --panel-muted: #8e8f94;
+        --trim: #55575c; --key-face: #45464b; --key-shadow: #1c1d20; --key-ink: #ededef;
+        color-scheme: dark;
+      }
+      [data-theme="seafoam"] {
+        --ground: #dcebe4; --paper: #eff7f3; --line: #bfd8cc; --well: #d3e6dd; --card: #ffffff;
+        --ink: #1e2f2a; --muted: #4c665d; --accent: #e0603f; --link: #8a3322;
+        --lcd-glass: #14302a; --lcd-text: #a2f5d6;
+        --body-0: #cde8dd; --body-1: #afd6c7; --body-2: #98c6b5; --body-ink: #26423b; --body-off: #6f8f85;
+        --panel-0: #2a4842; --panel-1: #1a2f2b; --panel-ink: #eef7f3; --panel-muted: #9cb8ae;
+        --trim: #7fa397; --key-face: #f1f7f4; --key-shadow: #6f8f85; --key-ink: #1e2f2a;
+        color-scheme: light;
+      }
+      [data-theme="walnut"] {
+        --ground: #e6d9c7; --paper: #f5ede2; --line: #d2bfa6; --well: #e2d2bc; --card: #fffbf5;
+        --ink: #2e2118; --muted: #6b5643; --accent: #b8691a; --link: #6e3f0c;
+        --lcd-glass: #2a1c0c; --lcd-text: #ffb547;
+        --body-0: #8e5e3e; --body-1: #74492d; --body-2: #5e3921; --body-ink: #f1e4d2; --body-off: #4a2f1d;
+        --panel-0: #3a2719; --panel-1: #22160d; --panel-ink: #f3e8d8; --panel-muted: #b59e85;
+        --trim: #b08a5a; --key-face: #ede3d1; --key-shadow: #7e6a52; --key-ink: #2e2118;
+        color-scheme: light;
+      }
+      [data-theme="cobalt"] {
+        --ground: #dde4f1; --paper: #f1f4fa; --line: #c3cde2; --well: #d6deee; --card: #ffffff;
+        --ink: #1a2240; --muted: #4e5978; --accent: #f0622a; --link: #9a3510;
+        --lcd-glass: #0d1938; --lcd-text: #7fe3ff;
+        --body-0: #4a6fd0; --body-1: #3657b8; --body-2: #2a4598; --body-ink: #eef2ff; --body-off: #22346e;
+        --panel-0: #1e2a55; --panel-1: #111936; --panel-ink: #eef1fa; --panel-muted: #98a3c7;
+        --trim: #9aaad6; --key-face: #eef1f8; --key-shadow: #5e6c93; --key-ink: #1a2240;
+        color-scheme: light;
+      }
+
+      /* The cassettes are the same whatever the theme */
+      :root {
+        --shell: #2c2c30; --bay: #17181a; --label: #efe5cc; --pen: #2b3a8f;
+        --label-ink: #2a2724; --label-muted: #5f584e; --stripe: #e8641c; --reel: #d8d4cc;
+        --hand: "Caveat", "Bradley Hand", "Segoe Print", cursive;
+        --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      }
+
+      /* General Body */
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--paper);
+        color: var(--ink);
+        margin: 0;
+        padding: 0;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      /* Header: the deck's body */
+      header {
+        position: relative;
+        background:
+          repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 3px),
+          linear-gradient(180deg, var(--body-0) 0%, var(--body-1) 45%, var(--body-2) 100%);
+        color: var(--body-ink);
+        padding: 28px 20px 24px;
+        text-align: center;
+        border-bottom: 3px solid var(--trim);
+      }
+      .screw {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 35%, var(--key-face), var(--trim) 70%);
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
+      }
+      .screw::after {
+        content: "";
+        position: absolute;
+        left: 2px; right: 2px; top: 4px;
+        height: 2px;
+        background: rgba(0, 0, 0, 0.35);
+        transform: rotate(35deg);
+      }
+      .screw.tl { top: 12px; left: 12px; }
+      .screw.tr { top: 12px; right: 12px; }
+      .screw.bl { bottom: 12px; left: 12px; }
+      .screw.br { bottom: 12px; right: 12px; }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand img {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+      }
+      header h1 {
+        margin: 0;
+        font-family: var(--hand);
+        font-weight: 700;
+        font-size: 3.2em;
+        line-height: 1;
+      }
+      header p {
+        margin: 8px 0 0 0;
+        font-size: 0.9em;
+      }
+      .email-link {
+        color: inherit;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .email-link:hover { text-decoration: underline; }
+
+      /* The LCD readout and tape counter */
+      .lcd {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        max-width: 340px;
+        margin: 18px auto 0;
+        padding: 9px 14px;
+        background: var(--lcd-glass);
+        color: var(--lcd-text);
+        font-family: var(--mono);
+        font-size: 0.82em;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        border-radius: 6px;
+        box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.6), 0 1px 0 rgba(255, 255, 255, 0.35);
+        text-shadow: 0 0 6px currentColor;
+      }
+      .lcd .play { animation: blink 1.6s steps(1) infinite; }
+      @keyframes blink { 50% { opacity: 0.25; } }
+
+      /* Navigation: the key panel */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        background: linear-gradient(180deg, var(--panel-0), var(--panel-1));
+        padding: 12px 16px 14px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
+      nav a {
+        position: relative;
+        flex: 0 1 220px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 11px 14px 10px;
+        background: var(--key-face);
+        color: var(--key-ink);
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.95em;
+        line-height: 1.2;
+        text-align: center;
+        border-radius: 6px;
+        box-shadow: 0 4px 0 var(--key-shadow), 0 5px 8px rgba(0, 0, 0, 0.35);
+        transition: transform 0.08s, box-shadow 0.08s;
+      }
+      nav a:hover { text-decoration: underline; }
+      nav a:active,
+      nav a[aria-current="true"] {
+        transform: translateY(3px);
+        box-shadow: 0 1px 0 var(--key-shadow), 0 2px 4px rgba(0, 0, 0, 0.35);
+      }
+      .lamp {
+        width: 8px;
+        height: 8px;
+        flex: none;
+        border-radius: 50%;
+        background: var(--body-off);
+        transition: background 0.2s, box-shadow 0.2s;
+      }
+      nav a[aria-current="true"] .lamp {
+        background: var(--accent);
+        box-shadow: 0 0 8px var(--accent);
+      }
+
+      /* Content */
+      main {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 0 16px;
+      }
+
+      /* A cassette: the dark shell, the cream label with the orange stripe, the reel window */
+      .cassette {
+        background: var(--shell);
+        border-radius: 16px;
+        padding: 10px;
+        margin: 0 0 18px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+      }
+      .label {
+        background: var(--label);
+        border-radius: 8px;
+        padding: 12px 14px 14px;
+        color: var(--label-ink);
+      }
+      .stripe {
+        height: 4px;
+        border-radius: 2px;
+        background: var(--stripe);
+      }
+      .label-row {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        margin-top: 8px;
+      }
+      .side-letter {
+        flex: none;
+        display: grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 6px;
+        background: var(--label-ink);
+        color: var(--label);
+        font-family: var(--mono);
+        font-weight: 700;
+        transform: translateY(-4px);
+      }
+      h2 {
+        margin: 0;
+        font-family: var(--hand);
+        font-weight: 700;
+        font-size: 2.3em;
+        line-height: 1.1;
+        color: var(--pen);
+      }
+      .label-note {
+        margin: 0 0 10px 42px;
+        font-family: var(--hand);
+        font-size: 1.25em;
+        color: var(--label-muted);
+      }
+      .window {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 240px;
+        height: 34px;
+        margin: 0 auto;
+        padding: 0 14px;
+        background: var(--bay);
+        border-radius: 17px;
+      }
+      .reel {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        border: 3px dashed var(--reel);
+        background: radial-gradient(circle, var(--bay) 0 3px, var(--reel) 3px 5px, transparent 5px);
+      }
+      .tape-pack {
+        flex: 1;
+        height: 4px;
+        margin: 0 8px;
+        border-radius: 2px;
+        background: #4a3324;
+      }
+      .below {
+        display: flex;
+        justify-content: space-between;
+        padding: 9px 6px 1px;
+        font-family: var(--mono);
+        font-size: 0.72em;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        color: #a8a9ad;
+      }
+
+      /* The pages: the theme's cards */
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        margin-bottom: 40px;
+      }
+      .card > :first-child { margin-top: 0; }
+
+      h3 {
+        margin: 1.4em 0 0.2em;
+        font-family: var(--hand);
+        font-weight: 700;
+        font-size: 1.75em;
+        line-height: 1.15;
+        color: var(--ink);
+      }
+
+      p,
+      li {
+        margin: 0.8em 0;
+        line-height: 1.6;
+      }
+      ul { margin-left: 0.2em; padding-left: 1.2em; }
+      li::marker { color: var(--accent); }
+      a { color: var(--link); }
+      strong { font-weight: 600; }
+      .muted { color: var(--muted); }
+
+      footer {
+        text-align: center;
+        padding: 20px 16px 36px;
+        font-size: 0.9em;
+        color: var(--muted);
+      }
+      footer a {
+        color: var(--link);
+        text-decoration: none;
+      }
+      footer a:hover { text-decoration: underline; }
+
+      /* Theme picker, like Settings in the app */
+      .themes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 14px;
+        font-family: var(--hand);
+        font-size: 1.3em;
+      }
+      .themes button {
+        width: 26px;
+        height: 26px;
+        padding: 0;
+        border-radius: 50%;
+        border: 2px solid var(--line);
+        cursor: pointer;
+        transition: transform 0.15s;
+      }
+      .themes button:hover { transform: scale(1.12); }
+      .themes button[aria-pressed="true"] {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 2px var(--paper), 0 0 0 4px var(--accent);
+      }
+      .themes [data-pick="classic"] { background: linear-gradient(#d9dadc, #a6a8ab); }
+      .themes [data-pick="midnight"] { background: linear-gradient(#3a3b40, #232428); }
+      .themes [data-pick="seafoam"] { background: linear-gradient(#cde8dd, #98c6b5); }
+      .themes [data-pick="walnut"] { background: linear-gradient(#8e5e3e, #5e3921); }
+      .themes [data-pick="cobalt"] { background: linear-gradient(#4a6fd0, #2a4598); }
+
+      :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+      @media (max-width: 560px) {
+        header h1 { font-size: 2.6em; }
+        .brand img { width: 44px; height: 44px; }
+        nav { gap: 10px; }
+        nav a { flex: 1 1 0; font-size: 0.88em; padding: 10px 8px 9px; }
+        .card { padding: 22px 18px; }
+        h2 { font-size: 2em; }
+        .label-note { margin-left: 0; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .lcd .play { animation: none; }
+      }
+    </style>
+    <script>
+      // Pick the theme before the page draws, so it doesn't flash.
+      (function () {
+        var theme = null;
+        try { theme = localStorage.getItem("flipside-theme"); } catch (e) {}
+        if (!theme && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) theme = "midnight";
+        if (theme) document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <header>
+      <span class="screw tl" aria-hidden="true"></span>
+      <span class="screw tr" aria-hidden="true"></span>
+      <span class="screw bl" aria-hidden="true"></span>
+      <span class="screw br" aria-hidden="true"></span>
+      <div class="brand">
+        <img src="icon.png" alt="" width="52" height="52" />
+        <h1>Flipside</h1>
+      </div>
+      <p>
+        By Achsuthan |
+        <a href="mailto:achsuthan@icloud.com" class="email-link">achsuthan@icloud.com</a>
+      </p>
+      <div class="lcd" aria-hidden="true">
+        <span><span class="play">▶</span> <span id="lcd-side">SIDE A · PRIVACY</span></span>
+        <span id="lcd-counter">000</span>
+      </div>
+    </header>
+
+    <nav aria-label="Sections">
+      <a href="#privacy" data-side="privacy" aria-current="true"><span class="lamp" aria-hidden="true"></span>Privacy Policy</a>
+      <a href="#terms" data-side="terms"><span class="lamp" aria-hidden="true"></span>Terms & Conditions</a>
+    </nav>
+
+    <main>
+      <section aria-labelledby="privacy" data-side="privacy">
+        <div class="cassette">
+          <div class="label">
+            <div class="stripe"></div>
+            <div class="label-row">
+              <span class="side-letter" aria-hidden="true">A</span>
+              <h2 id="privacy">Privacy Policy</h2>
+            </div>
+            <p class="label-note">Last updated 29 October 2026</p>
+            <div class="window" aria-hidden="true">
+              <span class="reel"></span><span class="tape-pack"></span><span class="reel"></span>
+            </div>
+          </div>
+          <div class="below" aria-hidden="true"><span>C60 · TYPE I</span><span>SIDE A</span></div>
+        </div>
+
+        <article class="card">
+          <p>
+            Thank you for using Flipside. Your privacy is important to us. This
+            Privacy Policy explains how Flipside handles your information when
+            you use the app. The short version: your tapes stay on your iPhone.
+          </p>
+
+          <h3>Information We Collect</h3>
+          <p>
+            We don't collect any personal information. Flipside has no account
+            or sign-in, no servers of its own, and no analytics, advertising or
+            tracking. We don't know who you are, what you listen to or how you
+            use the app.
+          </p>
+
+          <h3>What Stays on Your iPhone</h3>
+          <p>Everything you make in Flipside is stored on your iPhone only:</p>
+          <ul>
+            <li>Your tapes, their labels, colours and tracklists.</li>
+            <li>Songs you import from Files, iCloud Drive, a USB drive or Wi-Fi transfer.</li>
+            <li>Voice clips you record with the REC button.</li>
+            <li>Your settings, such as the theme and app icon.</li>
+            <li>
+              A short activity log (screens opened, tapes played, problems)
+              that helps explain issues if you send feedback. It never contains
+              song titles, tape names or file names, and keeps only the most
+              recent entries.
+            </li>
+          </ul>
+          <p>
+            Your iPhone may include this data in its own iCloud or computer
+            backups, under Apple's control and your backup settings.
+          </p>
+
+          <h3>Apple Music</h3>
+          <p>
+            If you choose to connect Apple Music, Flipside uses Apple's MusicKit
+            to search the catalogue, read your music library and play songs.
+            These requests go straight from your iPhone to Apple and are covered
+            by
+            <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a>.
+            Without a subscription, Flipside plays Apple's free 30-second
+            previews. You can turn off access at any time in iOS Settings.
+          </p>
+
+          <h3>Microphone</h3>
+          <p>
+            Flipside uses the microphone only while you record a voice clip with
+            the REC button. Clips are saved on your iPhone and are only included
+            in a tape you decide to share.
+          </p>
+
+          <h3>Local Network (Wi-Fi Transfer)</h3>
+          <p>
+            While the Wi-Fi transfer screen is open, Flipside runs a small page
+            on your Wi-Fi so you can send songs from a computer. Files go
+            directly from that computer to your iPhone over your local network.
+            Nothing is sent over the internet, and the page stops when you leave
+            the screen.
+          </p>
+
+          <h3>Sharing Tapes</h3>
+          <p>
+            When you share a tape, Flipside creates a <strong>.flipside</strong>
+            file with the tape's label, tracklist and any voice clips, plus the
+            audio of your own song files if you choose to include them. Apple
+            Music audio is never included. You choose who receives it (through
+            Messages, AirDrop, Mail or any other app) and we never see it.
+          </p>
+
+          <h3>Feedback</h3>
+          <p>
+            Feedback is sent by email from your own mail app. You can see
+            exactly what's attached first: app and iOS versions, your settings
+            and the recent activity log. You can turn the details off, and
+            nothing is sent until you press Send. We use feedback only to reply
+            to you and improve Flipside.
+          </p>
+
+          <h3>Purchases</h3>
+          <p>
+            Flipside Plus is bought through the App Store. Apple handles the
+            payment, and we never receive your payment details or Apple ID.
+            Flipside checks what you own on your iPhone with Apple's StoreKit.
+          </p>
+
+          <h3>Widgets</h3>
+          <p>
+            Flipside's Home Screen widget reads the tape you're playing and your
+            theme from storage shared on your iPhone. That information never
+            leaves your iPhone.
+          </p>
+
+          <h3>Data Usage</h3>
+          <p>
+            We do not sell or share your data. As Flipside doesn't collect it,
+            there's nothing to sell. To remove your data, delete tapes and songs
+            in the app or delete the app.
+          </p>
+
+          <h3>Children’s Privacy</h3>
+          <p>
+            Flipside doesn't collect personal information from anyone, including
+            children under 13.
+          </p>
+
+          <h3>Changes</h3>
+          <p>
+            This policy may be updated periodically, and the date above shows
+            the latest version. Continued use constitutes acceptance of the
+            updated policy.
+          </p>
+        </article>
+      </section>
+
+      <section aria-labelledby="terms" data-side="terms">
+        <div class="cassette">
+          <div class="label">
+            <div class="stripe"></div>
+            <div class="label-row">
+              <span class="side-letter" aria-hidden="true">B</span>
+              <h2 id="terms">Terms & Conditions</h2>
+            </div>
+            <p class="label-note">Last updated 29 October 2026</p>
+            <div class="window" aria-hidden="true">
+              <span class="reel"></span><span class="tape-pack"></span><span class="reel"></span>
+            </div>
+          </div>
+          <div class="below" aria-hidden="true"><span>C60 · TYPE I</span><span>SIDE B</span></div>
+        </div>
+
+        <article class="card">
+          <p>
+            By downloading and using Flipside, you agree to the following Terms
+            and Conditions.
+          </p>
+
+          <h3>1. Acceptance of Terms</h3>
+          <p>
+            By using the app, you agree to these terms. If you do not agree,
+            please uninstall the app. Apple's
+            <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">Standard End User License Agreement</a>
+            also applies.
+          </p>
+
+          <h3>2. Flipside Plus</h3>
+          <p>
+            Flipside is free to use, with up to 5 tapes. Flipside Plus unlocks
+            themes and app icons, C90 tapes, unlimited tapes, sending tapes with
+            your songs, and REC voice intros. Plus is available as:
+          </p>
+          <ul>
+            <li>A monthly or yearly auto-renewing subscription, which may begin with a free trial.</li>
+            <li>A one-time Lifetime purchase.</li>
+          </ul>
+          <p>
+            Payment is charged to your Apple ID when you confirm the purchase.
+            A subscription renews automatically unless you cancel it at least 24
+            hours before the end of the current period, and your account is
+            charged for renewal within the 24 hours before then. You can manage
+            or cancel your subscription in your Apple ID settings in the App
+            Store. If you buy a subscription during a free trial, any unused
+            part of the trial ends. Prices are shown in the app before you buy.
+            Purchases can be restored on your other devices with the same Apple
+            ID and, where offered, shared with Family Sharing. Refunds are
+            handled by Apple.
+          </p>
+
+          <h3>3. Apple Music</h3>
+          <p>
+            Playing full Apple Music songs requires an active Apple Music
+            subscription, which is provided by Apple under its own terms.
+            Flipside isn't affiliated with Apple Music, and the songs available
+            to you depend on Apple and your region.
+          </p>
+
+          <h3>4. Your Music and Tapes</h3>
+          <p>
+            You're responsible for the songs, recordings and tape names you add
+            to Flipside. Import and share only audio you have the right to use.
+            When you share a tape that includes your own song files, you're
+            responsible for having the right to share them.
+          </p>
+
+          <h3>5. Use of the App</h3>
+          <p>
+            Flipside is provided to play, arrange and share your music on a
+            virtual cassette deck. Use responsibly and in accordance with local
+            laws. The starter tapes, sounds, artwork and design of Flipside are
+            provided for use within the app only.
+          </p>
+
+          <h3>6. Limitation of Liability</h3>
+          <p>
+            Flipside is provided “as-is.” We are not liable for indirect,
+            incidental, or consequential damages, including the loss of tapes,
+            recordings or song files. Keep your own copies of anything that
+            matters to you.
+          </p>
+
+          <h3>7. Modifications</h3>
+          <p>
+            We may modify the app or these terms at any time. Continued use
+            constitutes acceptance.
+          </p>
+
+          <h3>8. Contact</h3>
+          <p>
+            Questions about Terms or Privacy? Contact
+            <a href="mailto:achsuthan@icloud.com">achsuthan@icloud.com</a>, or
+            use Send feedback in the app's Settings.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      &copy; 2026 Flipside. By Achsuthan.
+      <div class="themes" role="group" aria-label="Deck colour">
+        <span aria-hidden="true">Deck colour</span>
+        <button type="button" data-pick="classic" aria-label="Classic"></button>
+        <button type="button" data-pick="midnight" aria-label="Midnight"></button>
+        <button type="button" data-pick="seafoam" aria-label="Seafoam"></button>
+        <button type="button" data-pick="walnut" aria-label="Walnut"></button>
+        <button type="button" data-pick="cobalt" aria-label="Cobalt"></button>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var meta = document.querySelector('meta[name="theme-color"]');
+
+        // Theme picker
+        var buttons = document.querySelectorAll("[data-pick]");
+        function showTheme() {
+          var current = root.getAttribute("data-theme");
+          buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.pick === current)); });
+          meta.setAttribute("content", getComputedStyle(root).getPropertyValue("--body-1").trim());
+        }
+        buttons.forEach(function (b) {
+          b.addEventListener("click", function () {
+            root.setAttribute("data-theme", b.dataset.pick);
+            try { localStorage.setItem("flipside-theme", b.dataset.pick); } catch (e) {}
+            showTheme();
+          });
+        });
+        showTheme();
+
+        // The side playing: lights its key and shows it on the LCD.
+        var keys = document.querySelectorAll("nav a");
+        var lcdSide = document.getElementById("lcd-side");
+        var names = { privacy: "SIDE A · PRIVACY", terms: "SIDE B · TERMS" };
+        function setSide(side) {
+          keys.forEach(function (k) { k.setAttribute("aria-current", String(k.dataset.side === side)); });
+          lcdSide.textContent = names[side];
+        }
+        var sections = document.querySelectorAll("section[data-side]");
+        function updateSide() {
+          var side = "privacy";
+          sections.forEach(function (s) {
+            if (s.getBoundingClientRect().top < window.innerHeight * 0.4) side = s.dataset.side;
+          });
+          setSide(side);
+        }
+
+        // The tape counter runs 000 to 999 through the page.
+        var counter = document.getElementById("lcd-counter");
+        function updateCounter() {
+          var max = document.documentElement.scrollHeight - window.innerHeight;
+          var n = max > 0 ? Math.round((window.scrollY / max) * 999) : 0;
+          counter.textContent = ("00" + Math.min(999, Math.max(0, n))).slice(-3);
+        }
+
+        // The reels turn slowly, and wind faster while the page scrolls.
+        var reels = document.querySelectorAll(".reel");
+        var still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var angle = 0, lastY = window.scrollY, lastT = 0;
+        function turn(t) {
+          var dt = lastT ? Math.min(t - lastT, 100) : 0;
+          lastT = t;
+          var dy = window.scrollY - lastY;
+          lastY = window.scrollY;
+          angle = (angle + dt * 0.06 + dy * 0.8) % 360;
+          var transform = "rotate(" + angle + "deg)";
+          reels.forEach(function (r) { r.style.transform = transform; });
+          requestAnimationFrame(turn);
+        }
+        if (!still) requestAnimationFrame(turn);
+
+        window.addEventListener("scroll", function () { updateSide(); updateCounter(); }, { passive: true });
+        window.addEventListener("resize", updateCounter);
+        updateSide();
+        updateCounter();
+      })();
+    </script>
+  </body>
+</html>
